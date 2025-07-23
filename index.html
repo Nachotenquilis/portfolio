@@ -3,43 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi Portafolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Portafolio | Ignacio Ten Quilis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary:#1e1e1e;
+      --accent:#0077b6;
+      --bg:#ffffff;
+      --light-bg:#f7f9fc;
+      --text:#333333;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      line-height:1.6;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    header{
+      background:var(--primary);
+      color:#ffffff;
+      padding:2rem 1rem;
+      text-align:center;
+    }
+
+    header h1{
+      font-size:2rem;
+      margin-bottom:0.25rem;
+    }
+
+    header p{
+      font-weight:300;
+      opacity:0.9;
+    }
+
+    nav{
+      margin-top:1rem;
+    }
+
+    nav a{
+      color:#ffffff;
+      text-decoration:none;
+      margin:0 0.75rem;
+      font-weight:600;
+      transition:opacity 0.2s;
+    }
+
+    nav a:hover{
+      opacity:0.7;
+    }
+
+    .container{
+      max-width:900px;
+      margin:auto;
+      padding:2rem 1rem;
+    }
+
+    section{
+      margin-bottom:3rem;
+    }
+
+    section h2{
+      font-size:1.5rem;
+      margin-bottom:1rem;
+      color:var(--accent);
+    }
+
+    .proyecto{
+      background:var(--light-bg);
+      border:1px solid #e2e8f0;
+      border-radius:8px;
+      padding:1rem 1.5rem;
+      margin-bottom:1.5rem;
+      box-shadow:0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .proyecto h3{
+      margin-bottom:0.5rem;
+    }
+
+    .proyecto a{
+      display:inline-block;
+      margin-top:0.75rem;
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .proyecto a:hover{
+      text-decoration:underline;
+    }
+
+    footer{
+      background:var(--light-bg);
+      text-align:center;
+      padding:1.5rem 1rem;
+      font-size:0.875rem;
+      color:#666666;
+    }
+
+    @media (min-width:768px){
+      header h1{font-size:2.5rem;}
+      nav a{margin:0 1rem;}
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Ignacio Ten Quilis</h1>
-    <p>Ingeniero Industrial | Energías renovables | PowerPlatform</p>
+    <p>Ingeniero Industrial | Energías Renovables | Power Platform</p>
     <nav>
-      <a href="#sobre-mi"></a>
-      <a href="#proyectos"></a>
-      <a href="#contacto">Mail: nachotenquilis@gmail.com</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
-  <section id="sobre-mi">
-    <h2>Sobre mí</h2>
-    <p>Soy Ingeniero Industrial por la UPV y actualmente resido en Madrid. Por la naturaleza de mis estudios cuento con conociemientos en todas las ramas de la industría, así como experiencia automatizando procesos mediante PowerPlatform. Este conjunto de habilidades me ha permitido tanto entender los problemas técnicos a los que me enfrento como a crear solucioens automáticas a estos.</p>
-  </section>
+  <main class="container">
+    <section id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <p>Soy Ingeniero Industrial por la UPV y actualmente resido en Madrid. Gracias a la naturaleza interdisciplinar de mis estudios, poseo conocimientos sólidos en múltiples áreas de la industria, así como experiencia automatizando procesos mediante Power Platform. Este conjunto de habilidades me permite comprender los desafíos técnicos y crear soluciones automáticas para resolverlos.</p>
+    </section>
 
-  <section id="proyectos">
-    <h2>Proyectos</h2>
-    <div class="proyecto">
-      <h3>Automatización de informes en Sika</h3>
-      <p>Mis primeros pasos en la automatización.
-Al comenzar este proyecto me encontré con una empresa que no tenia a ningún empleado con conocimientos en automatización de procesos, por lo cual tuve que aprender por mi cuenta como funcionaba PowerPlatform hasta conseguir los suficientes conocimientos como para desarrollar diferentes soluciones sólidas basadas en flujos de PowerAutomate y aplciaciones de PowerApps</p>
-      <a href="https://github.com/TU-USUARIO/proyecto1" target="_blank">Ver en GitHub</a>
-    </div>
-    <h3>Digitalización en Enagás</h3>
-     <p>Actualmente me encuentro trabajando en este proyecto.
-Una empresa con unos objetivos más claros en cuanto a la digitalización y la automatización de procesos, donde he creado diferentes soluciones implementendo flujos e IA, consiguiendo agilizar diferentes procesos como la lectura y clasificación de archuivos.</p>
-  </section>
+    <section id="proyectos">
+      <h2>Proyectos</h2>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>Email: <a href="mailto:tucorreo@example.com">nachotenquilis@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/tuusuario" target="_blank">https://https://www.linkedin.com/in/ignacio-ten-quilis-a3319126a//</a></p>
-  </section>
+      <article class="proyecto">
+        <h3>Automatización de informes en Sika</h3>
+        <p>Mis primeros pasos en la automatización. La empresa no contaba con personal especializado, por lo que aprendí por mi cuenta el funcionamiento de Power Platform hasta desarrollar soluciones robustas basadas en flujos de Power Automate y aplicaciones de Power Apps.</p>
+      </article>
+
+      <article class="proyecto">
+        <h3>Digitalización en Enagás</h3>
+        <p>Actualmente trabajando en este proyecto. He implementado flujos e IA para agilizar procesos, como la lectura y clasificación automática de archivos, contribuyendo a los objetivos de digitalización de la compañía.</p>
+      </article>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Email: <a href="mailto:nachotenquilis@gmail.com">nachotenquilis@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/ignacio-ten-quilis-a3319126a/" target="_blank" rel="noopener">/in/ignacio-ten-quilis-a3319126a</a></p>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Ignacio Ten Quilis</p>
