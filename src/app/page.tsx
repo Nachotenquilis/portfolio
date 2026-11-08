@@ -42,6 +42,8 @@ import SpotlightCard from '@/components/SpotlightCard';
 import Magnet from '@/components/Magnet';
 import Dock from '@/components/Dock';
 
+const BASE_PATH = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+
 // ============================================================================
 // VERIFIED CV DATA (Ignacio Ten - Industrial Engineer & Data Analyst)
 // ============================================================================
@@ -641,7 +643,7 @@ export default function PortfolioPage() {
                 ))}
                 <div className="mt-2 flex items-center gap-2">
                   <a
-                    href="/CV_Ignacio_Ten_ENG.pdf"
+                    href={`${BASE_PATH}/CV_Ignacio_Ten_ENG.pdf`}
                     download="CV_Ignacio_Ten_ENG.pdf"
                     className="y2k-btn-primary flex-1 justify-center rounded-sm py-2.5 font-mono text-xs tracking-wider whitespace-nowrap uppercase"
                   >
@@ -711,7 +713,7 @@ export default function PortfolioPage() {
                 <div className="mt-8 flex flex-wrap items-center gap-4">
                   <Magnet padding={40} magnetStrength={3.5}>
                     <a
-                      href="/CV_Ignacio_Ten_ENG.pdf"
+                      href={`${BASE_PATH}/CV_Ignacio_Ten_ENG.pdf`}
                       download="CV_Ignacio_Ten_ENG.pdf"
                       className="y2k-btn-primary rounded-sm px-6 py-3.5 font-mono text-xs tracking-wider whitespace-nowrap uppercase"
                     >
@@ -750,7 +752,7 @@ export default function PortfolioPage() {
                   {/* Interactive WebGL DitherVeil Portrait Viewport */}
                   <div className="relative aspect-[4/4.3] w-full overflow-hidden bg-[#090B10]">
                     <DitherVeil
-                      src="/assets/portrait_1.jpg"
+                      src={`${BASE_PATH}/assets/portrait_1.jpg`}
                       fit="cover"
                       pattern={ditherPattern}
                       pixelSize={ditherPixelSize}
@@ -1369,7 +1371,7 @@ export default function PortfolioPage() {
                     Download the signed PDF curriculum vitae with full academic and industrial engineering credentials.
                   </p>
                   <a
-                    href="/CV_Ignacio_Ten_ENG.pdf"
+                    href={`${BASE_PATH}/CV_Ignacio_Ten_ENG.pdf`}
                     download="CV_Ignacio_Ten_ENG.pdf"
                     className="y2k-btn-secondary mt-4 w-full justify-center rounded-sm py-2.5 font-mono text-xs tracking-wider whitespace-nowrap uppercase"
                   >
@@ -1734,7 +1736,7 @@ export default function PortfolioPage() {
                         <span>LinkedIn Profile</span>
                       </a>
                       <a
-                        href="/CV_Ignacio_Ten_ENG.pdf"
+                        href={`${BASE_PATH}/CV_Ignacio_Ten_ENG.pdf`}
                         download="CV_Ignacio_Ten_ENG.pdf"
                         className="y2k-btn-primary justify-center rounded-sm py-3 font-mono text-xs tracking-wider whitespace-nowrap uppercase"
                       >

@@ -5,7 +5,7 @@ import { Renderer, Program, Mesh, Triangle, Texture, RenderTarget } from 'ogl';
 
 import './DitherVeil.css';
 
-const DEFAULT_SRC = '/assets/portrait_1.jpg';
+const DEFAULT_SRC = (typeof process !== 'undefined' && process.env.NODE_ENV === 'production' ? '/portfolio' : '') + '/assets/portrait_1.jpg';
 
 const ORDERED = { bayer: 0, noise: 1, lines: 2 };
 
