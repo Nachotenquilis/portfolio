@@ -1,0 +1,15 @@
+.y2k-velocity-parallax {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.y2k-velocity-scroller {
+  display: flex;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.y2k-velocity-scroller span {
+  flex-shrink: 0;
+}

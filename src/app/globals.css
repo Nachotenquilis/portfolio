@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root,
+.dark {
+  --background: #090B10;
+  --foreground: #EAEFF7;
+
+  --card: #10141D;
+  --card-foreground: #EAEFF7;
+  --popover: #10141D;
+  --popover-foreground: #EAEFF7;
+
+  --primary: #B8E62E;
+  --primary-foreground: #090B10;
+  --secondary: #161C28;
+  --secondary-foreground: #EAEFF7;
+
+  --muted: #161C28;
+  --muted-foreground: #94A3B8;
+
+  --accent: #B8E62E;
+  --accent-foreground: #090B10;
+
+  --destructive: #E5484D;
+  --destructive-foreground: #EAEFF7;
+
+  --border: rgba(216, 228, 248, 0.14);
+  --input: rgba(216, 228, 248, 0.18);
+  --ring: #B8E62E;
+
+  --radius: 0.75rem;
+
+  /* Emil Kowalski custom easing tokens */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-display: var(--font-display), sans-serif;
+  --font-sans: var(--font-sans), sans-serif;
+  --font-mono: var(--font-mono), monospace;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(216, 228, 248, 0.24) #090B10;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+    caret-color: #B8E62E;
+  }
+
+  ::selection {
+    background-color: #B8E62E;
+    color: #090B10;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans), sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  a {
+    text-underline-offset: 4px;
+  }
+}
+
+/* Custom WebKit Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090B10;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(216, 228, 248, 0.22);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B8E62E;
+}
+
+/* Neo-Y2K Smoked Polycarbonate & Chrome Window System */
+.y2k-window {
+  position: relative;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(22, 28, 40, 0.86) 0%, rgba(16, 20, 29, 0.94) 100%);
+  border: 1px solid rgba(216, 228, 248, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition:
+    border-color 180ms var(--ease-out),
+    transform 180ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .y2k-window-interactive:hover {
+    border-color: rgba(184, 230, 46, 0.42);
+  }
+}
+
+.y2k-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid rgba(216, 228, 248, 0.12);
+  background: linear-gradient(90deg, rgba(216, 228, 248, 0.08) 0%, rgba(216, 228, 248, 0.02) 55%, rgba(184, 230, 46, 0.06) 100%);
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
+}
+
+.y2k-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border-radius: 8px;
+  background-color: #B8E62E;
+  color: #090B10;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.8rem 1.35rem;
+  border: 1px solid #B8E62E;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform 150ms var(--ease-out),
+    background-color 150ms var(--ease-out),
+    border-color 150ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .y2k-btn-primary:hover {
+    background-color: #c8f242;
+    border-color: #c8f242;
+    transform: translateY(-1px);
+  }
+}
+
+.y2k-btn-primary:active {
+  transform: scale(0.97);
+}
+
+.y2k-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(28, 36, 52, 0.9) 0%, rgba(16, 20, 29, 0.95) 100%);
+  color: #EAEFF7;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.8rem 1.35rem;
+  border: 1px solid rgba(216, 228, 248, 0.24);
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform 150ms var(--ease-out),
+    border-color 150ms var(--ease-out),
+    color 150ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .y2k-btn-secondary:hover {
+    border-color: #B8E62E;
+    color: #B8E62E;
+    transform: translateY(-1px);
+  }
+}
+
+.y2k-btn-secondary:active {
+  transform: scale(0.97);
+}
+
+/* Fixed CRT / Vectorheart Micro-Scanline Overlay (Zero Scroll Repaint Cost) */
+.y2k-scanline-overlay {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(9, 11, 16, 0.22) 2px,
+    rgba(9, 11, 16, 0.22) 4px
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
